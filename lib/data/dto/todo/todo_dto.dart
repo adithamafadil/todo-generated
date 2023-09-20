@@ -1,16 +1,25 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+class TodoDTO {
+  final String? id;
+  final String? todo;
+  final List<String>? todoDetails;
 
-part 'todo_dto.g.dart';
-part 'todo_dto.freezed.dart';
+  const TodoDTO({
+    this.todo,
+    this.id,
+    this.todoDetails,
+  });
 
-@freezed
-class TodoDTO with _$TodoDTO {
-  const factory TodoDTO({
-    String? id,
-    String? todo,
-    @JsonKey(name: 'todo_details') List<String>? todoDetails,
-  }) = _TodoDTO;
+  factory TodoDTO.fromJson(Map<String, dynamic> json) => TodoDTO(
+        id: json['id'],
+        todo: json['todo'],
+        todoDetails:
+            List<String>.from(json['todo_details']).map((e) => e).toList(),
+      );
 
-  factory TodoDTO.fromJson(Map<String, dynamic> json) =>
-      _$TodoDTOFromJson(json);
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'todo': todo,
+        'todo_details':
+            List<String>.from(todoDetails ?? []).map((e) => e).toList()
+      };
 }

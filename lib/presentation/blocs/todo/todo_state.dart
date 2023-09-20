@@ -1,12 +1,19 @@
 part of 'todo_cubit.dart';
 
-@freezed
-class TodoState with _$TodoState {
-  const factory TodoState({
-    required ViewState<List<TodoEntity>> todoListState,
-  }) = _TodoState;
+class TodoState {}
 
-  factory TodoState.initial() => const TodoState(
-        todoListState: ViewState.initial(),
-      );
+class TodoInitial extends TodoState {}
+
+class TodoLoading extends TodoState {}
+
+class TodoSuccess extends TodoState {
+  List<TodoEntity> todoList;
+
+  TodoSuccess({required this.todoList});
+}
+
+class TodoError extends TodoState {
+  String? error;
+
+  TodoError({this.error});
 }

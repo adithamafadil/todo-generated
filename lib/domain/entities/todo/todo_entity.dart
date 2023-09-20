@@ -1,12 +1,11 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+class TodoEntity {
+  final String todo;
+  final String id;
+  final List<String> todoDetails;
 
-part 'todo_entity.freezed.dart';
-
-@freezed
-class TodoEntity with _$TodoEntity {
-  const factory TodoEntity({
-    required String todo,
-    required String id,
-    required List<String> todoDetails,
-  }) = _TodoEntity;
+  const TodoEntity({
+    required this.todo,
+    required this.todoDetails,
+    required this.id,
+  });
 }

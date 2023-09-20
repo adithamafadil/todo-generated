@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter_generated/data/dto/todo/todo_dto.dart';
-import 'package:injectable/injectable.dart';
 
 const todoExampleData =
     '[{"id": "1", "todo": "Todo 1", "todo_details":["Todo 1 Detail 1", "Todo 1 Detail 2"]},'
@@ -12,7 +11,6 @@ const todoExampleData =
     '{"id": "6", "todo": "Todo 6", "todo_details":["Todo 6 Detail 1", "Todo 6 Detail 2"]},'
     '{"id": "7", "todo": "Todo 7", "todo_details":["Todo 7 Detail 1", "Todo 7 Detail 2"]}]';
 
-@lazySingleton
 class TodoRemoteDatasource {
   Future<List<TodoDTO>> getTodos() async {
     try {
@@ -25,5 +23,3 @@ class TodoRemoteDatasource {
     }
   }
 }
-
-
