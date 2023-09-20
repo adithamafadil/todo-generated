@@ -1,0 +1,63 @@
+name: flutter_generated
+description: A new Flutter project.
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+  flutter_bloc: any
+
+  # Dependencies
+  get_it: any
+  injectable: any
+
+  # Assets
+  flutter_gen: any
+
+  # Data Structure
+  freezed_annotation: any
+  json_serializable: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+  build_runner: any
+
+  # Assets
+  assets_generator: any
+  flutter_gen_runner: any
+
+  # Data Structure
+  freezed: any
+
+  # Dependencies
+  injectable_generator: any
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+flutter_gen:
+  output: lib/presentation/assets/
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: true
+    lottie: true
+
